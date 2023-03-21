@@ -23,6 +23,8 @@ body {
     width: fit-content;
     margin: 0 auto;
     padding: 1rem;
+    position: relative;
+    z-index: 3;
 }
 .container h1 {
     border: 1px solid black;
@@ -62,6 +64,7 @@ ul > li > p {
     background-color: rgb(14, 14, 14);
     padding: 8px 8px 16px;
     position: relative;
+    z-index: 2;
 }
 
 /* .line6{
@@ -91,6 +94,7 @@ ul > li > p {
     width: 55.5px;
     height: 55.5px;
     transition: 0.2s;
+    animation: color-change 15s linear infinite alternate;
 }
 .ctrl,
 .alt,
@@ -292,9 +296,113 @@ ul > li > p {
 }
 
 .key.active {
-    border-color: wheat;
+    border: 2px solid black;
+    border-color: black !important;
 }
 
 .key.letter.active, .key.num.active, .ctrl.active::after, .alt.active::after, .shift.active::after, .tab.active, .escape.active::after{
     color: wheat;
 }
+
+
+.bars{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    display: grid;
+    gap: 20px;
+}
+
+.bar{
+    width: 80px;
+    height: 4px;
+    background-color: red;
+    transform: rotate(330deg);
+    transform-origin: top right;
+}
+
+.bar:nth-of-type(odd){
+    animation: color-change2 20s linear infinite alternate;
+}
+.bar:nth-of-type(even){
+    animation: color-change2 20s linear infinite alternate-reverse;
+}
+
+@keyframes color-change {
+    0% {
+        border-color: rgba(255, 0, 0, 0.747); /* vermelho */
+      }
+      10% {
+        border-color: rgba(255, 128, 0, 0.747); /* laranja */
+      }
+      20% {
+        border-color: rgba(255, 255, 0, 0.747); /* amarelo */
+      }
+      30% {
+        border-color: rgba(128, 255, 0, 0.747); /* amarelo esverdeado */
+      }
+      40% {
+        border-color: rgba(0, 255, 0, 0.747); /* verde */
+      }
+      50% {
+        border-color: rgba(0, 255, 128, 0.747); /* verde azulado */
+      }
+      60% {
+        border-color: rgba(0, 255, 255, 0.747); /* azul claro */
+      }
+      70% {
+        border-color: rgba(0, 128, 255, 0.747); /* azul esverdeado */
+      }
+      80% {
+        border-color: rgba(0, 0, 255, 0.747); /* azul */
+      }
+      90% {
+        border-color: rgba(128, 0, 255, 0.747); /* roxo */
+      }
+      100% {
+        border-color: rgba(255, 0, 255, 0.747); /* rosa */
+      }
+  }
+
+  @keyframes color-change2 {
+    0% {
+        background-color: rgb(255, 0, 0); /* vermelho */
+      }
+      10% {
+        background-color: rgb(255, 128, 0); /* laranja */
+      }
+      20% {
+        background-color: rgb(255, 255, 0); /* amarelo */
+      }
+      30% {
+        background-color: rgb(128, 255, 0); /* amarelo esverdeado */
+      }
+      40% {
+        background-color: rgb(0, 255, 0); /* verde */
+      }
+      50% {
+        background-color: rgb(0, 255, 128); /* verde azulado */
+      }
+      60% {
+        background-color: rgb(0, 255, 255); /* azul claro */
+      }
+      70% {
+        background-color: rgb(0, 128, 255); /* azul esverdeado */
+      }
+      80% {
+        background-color: rgb(0, 0, 255); /* azul */
+      }
+      90% {
+        background-color: rgb(128, 0, 255); /* roxo */
+      }
+      100% {
+        background-color: rgb(255, 0, 255); /* rosa */
+      }
+  }
+
+  img{
+    position: absolute;
+    top: -300%;
+    right: -27%;
+    z-index: -1;
+  }
