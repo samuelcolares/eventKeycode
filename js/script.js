@@ -9,7 +9,7 @@ let previousKey = null; // variável para armazenar a tecla pressionada anterior
 keyboardKeys.forEach(key => {
     // Adiciona o evento 'keypress' para cada tecla do teclado
     window.addEventListener('keydown', (e) => {
-        if (key.textContent === e.key.toLowerCase() || key.textContent === e.code) {
+        if (key.textContent === e.key.toLowerCase() || key.textContent === e.code.toLocaleLowerCase()) {
 
             // Remove a classe 'active' da tecla pressionada anteriormente
             if (previousKey) {
@@ -29,7 +29,6 @@ keyboardKeys.forEach(key => {
 
 const container = document.querySelector('.container')
 window.addEventListener('keydown', (e) => {
-    console.log(e)
     const keyCode = e.keyCode
     const key = e.key
     const code = e.code
@@ -63,15 +62,15 @@ window.addEventListener('keydown', function (e) {
     }
     if (e.shiftKey && e.code.toLocaleLowerCase() === shifts[0].textContent) {
         shifts[0].classList.add(`indicator`)
-        letter.forEach(l => l.classList.add('uppercase'))
+        letter.forEach(l => l.classList.add('uppercaseS'))
     } else if(e.shiftKey && e.code.toLocaleLowerCase() === shifts[1].textContent) {
         shifts[1].classList.add(`indicator`)
-        letter.forEach(l => l.classList.add('uppercase'))
+        letter.forEach(l => l.classList.add('uppercaseS'))
 }});
 
 window.addEventListener(`keyup`, (e) =>{
     if (!e.shiftKey){
         shifts.forEach(shift => shift.classList.remove('indicator'))
-        letter.forEach(l => l.classList.remove('uppercase'))
+        letter.forEach(l => l.classList.remove('uppercaseS'))
     }
 })

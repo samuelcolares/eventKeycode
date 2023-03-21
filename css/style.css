@@ -288,7 +288,7 @@ ul > li > p {
     transform: translate(-50%, -50%);
 }
 
-.letter.uppercase {
+.letter.uppercase, .letter.uppercaseS {
     text-transform: uppercase;
 }
 .caps {
@@ -298,6 +298,7 @@ ul > li > p {
 .key.active {
     border: 2px solid black;
     border-color: black !important;
+    transform: scale(0.95);
 }
 
 .key.letter.active, .key.num.active, .ctrl.active::after, .alt.active::after, .shift.active::after, .tab.active, .escape.active::after{
