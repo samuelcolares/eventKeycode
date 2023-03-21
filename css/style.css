@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sora", sans-serif;
+    height: 100vh;
+    background-color: rgb(29, 29, 29);
+    display: grid;
+    place-content: center;
+    gap: 80px;
+    background: url(../img/8708288.jpg);
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(14, 14, 14, 0.5);
+    box-shadow: 0px 0px 10px black;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+}
+.container h1 {
+    border: 1px solid black;
+    padding: 1rem 3rem;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+ul > li {
+    display: grid;
+    place-items: center;
+    gap: 5px;
+}
+
+ul > li > h6 {
+    font-size: 0.8rem;
+    color: wheat;
+}
+
+ul > li > p {
+    border: 1px solid black;
+    width: 180px;
+    height: 70px;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    background-color: rgb(206, 204, 204);
+    font-size: 20px;
+}
+
+.keyboard {
+    background-color: rgb(14, 14, 14);
+    padding: 8px 8px 16px;
+    position: relative;
+}
+
+/* .line6{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.line6 .key{
+    width: 45.5px;
+    height: 45.5px;
+} */
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5 {
+    display: flex;
+}
+
+.key {
+    display: grid;
+    place-content: center;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: rgb(95, 92, 82);
+    width: 55.5px;
+    height: 55.5px;
+    transition: 0.2s;
+}
+.ctrl,
+.alt,
+.ctxmenu {
+    width: 70.5px;
+}
+.tab,
+.backslash {
+    width: 84px;
+}
+.caps {
+    width: 99px;
+}
+.backspace {
+    width: 113px;
+}
+.shift,
+.enter {
+    width: 124.5px;
+}
+.space {
+    width: 340px;
+}
+.ctrl,
+.alt,
+.shift,
+.ctxmenu,
+.arrow,
+.backspace,
+.caps,
+.meta {
+    background-color: rgb(51, 52, 48);
+    color: transparent;
+    position: relative;
+}
+
+.enter, .backslash, .tab{
+    background-color: rgb(51, 52, 48);
+}
+.escape {
+    color: transparent;
+    position: relative;
+}
+
+.arrow.up::after {
+    content: "";
+    background: url(../img/arrow-up-solid.svg);
+    background-size: cover;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.arrow.down::after{
+    content: "";
+    background: url(../img/arrow-down-solid.svg);
+    background-size: cover;
+    position: absolute;
+    width: 20px;
+    height: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.arrow.left::after{
+    content: "";
+    background: url(../img/arrow-left-solid.svg);
+    background-size: cover;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.arrow.right::after{
+    content: "";
+    background: url(../img/arrow-right-solid.svg);
+    background-size: cover;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.caps::before{
+    content: 'caps';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .4s;
+}
+.caps.indicator::before{
+    color: RED;
+    text-transform: uppercase;
+}
+.caps.indicator{
+    border-color: RED !important;
+}
+
+.ctrl::after{
+    content: 'ctrl';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.alt::after{
+    content: 'alt';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.shift::after{
+    content: 'shift';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.shift.indicator::after{
+    color: RED !important;
+    text-transform: uppercase;
+}
+.shift.indicator{
+    border-color: RED !important;
+}
+.backspace::after{
+    content: '';
+    background: url(../img/arrow-left-long-solid.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.meta::after{
+    content: '';
+    background: url(../img/windows.svg);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ctxmenu::after{
+    content: '';
+    background: url(../img/bars-solid.svg);
+    background-size: cover;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ctxmenu::before{
+    content: '';
+    border: 2px solid black;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.escape::after{
+    content: 'esc';
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.letter.uppercase {
+    text-transform: uppercase;
+}
+.caps {
+    transition: 0.5s;
+}
+
+.key.active {
+    border-color: wheat;
+}
+
+.key.letter.active, .key.num.active, .ctrl.active::after, .alt.active::after, .shift.active::after, .tab.active, .escape.active::after{
+    color: wheat;
+}
